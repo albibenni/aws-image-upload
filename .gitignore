@@ -34,3 +34,4 @@ build/
 
 
 # aws credential
+AmazonConfig.java
