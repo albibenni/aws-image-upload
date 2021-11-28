@@ -28,6 +28,7 @@
 			<scope>test</scope>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk</artifactId>
@@ -44,8 +45,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<!-- https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk -->
-
 
 </project>
