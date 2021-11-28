@@ -34,4 +34,4 @@ build/
 
 
 # aws credential
-AmazonConfig.java
+/src/main/java/com/benni/awsimageupload/config/AmazonConfig.java
