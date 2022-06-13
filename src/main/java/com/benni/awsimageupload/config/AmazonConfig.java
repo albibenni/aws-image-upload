@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 
 
 //credential for AWS
-@Configuration
+//@Configuration
 public class AmazonConfig {
 
     @Bean
