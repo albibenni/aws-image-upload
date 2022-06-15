@@ -8,9 +8,9 @@ import java.util.List;
 @Service
 public class UserProfileService {
 
-    @Autowired
     private final UserProfileDataAccessService userProfileDataAccessService;
 
+    @Autowired
     public UserProfileService ( UserProfileDataAccessService userProfileDataAccessService){
         this.userProfileDataAccessService = userProfileDataAccessService;
     }
