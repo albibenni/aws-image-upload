@@ -11,11 +11,9 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("user-profile")
-@CrossOrigin("*")
+@CrossOrigin
 public class UserProfileController {
-
     private final UserProfileService userProfileService;
-
     @Autowired
     public UserProfileController (UserProfileService userProfileService){
         this.userProfileService = userProfileService;
@@ -26,6 +24,7 @@ public class UserProfileController {
         return userProfileService.getUserProfiles();
     }
 
+    @CrossOrigin("http://localhost:3000/")
     @PostMapping(
             path = "{userProfileId}/image/upload",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
