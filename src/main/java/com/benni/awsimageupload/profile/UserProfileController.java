@@ -11,7 +11,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("user-profile")
-@CrossOrigin
+@CrossOrigin("*")
 public class UserProfileController {
     private final UserProfileService userProfileService;
     @Autowired
@@ -24,14 +24,18 @@ public class UserProfileController {
         return userProfileService.getUserProfiles();
     }
 
-    @CrossOrigin("http://localhost:3000/")
     @PostMapping(
             path = "{userProfileId}/image/upload",
             consumes = MediaType.MULTIPART_FORM_DATA_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE
     )
-    public void uploadUserProfileImage(@PathVariable("userProfileId")UUID userProfileId,
-                                       @RequestParam("file")MultipartFile file){
+    public void uploadUserProfileImage(@PathVariable("userProfileId") UUID userProfileId,
+                                       @RequestParam("file") MultipartFile file){
         userProfileService.uploadUserProfileImage(userProfileId, file);
+    }
+
+    @GetMapping("{userProfileId}/image/download")
+    public byte[] downloadUserProfileImage(@PathVariable("userProfileId") UUID userProfileId) {
+        return userProfileService.downloadUserProfileImage(userProfileId);
     }
 }

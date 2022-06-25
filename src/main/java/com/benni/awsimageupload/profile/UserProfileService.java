@@ -28,4 +28,8 @@ public class UserProfileService {
             // grab metadata from file if any
         // 4 store the image in s3 and update db with s3 image link
     }
+
+    public byte[] downloadUserProfileImage(UUID userProfileId) {
+        return null;
+    }
 }
